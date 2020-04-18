@@ -198,7 +198,7 @@ abstract class AbstractResource
 
         //add Application Information
         $saleToAcquirerData = $this->handleApplicationInfoInRequest($saleToAcquirerData);
-        $saleToAcquirerData = base64_encode(json_encode($saleToAcquirerData));
+        $saleToAcquirerData = urlencode(base64_encode(json_encode($saleToAcquirerData)));
         $params['SaleToPOIRequest']['PaymentRequest']['SaleData']['SaleToAcquirerData'] = $saleToAcquirerData;
 
         return $params;
